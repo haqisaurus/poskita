@@ -3,3 +3,4 @@ src/poskita/vendor
 __debug_bin*
 private.pem
 public.pem
+.env
