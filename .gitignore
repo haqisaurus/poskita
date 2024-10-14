@@ -1,0 +1,5 @@
+bin/poskita
+src/poskita/vendor
+__debug_bin*
+private.pem
+public.pem

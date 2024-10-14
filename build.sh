@@ -1,0 +1,1 @@
+cd src/poskita && go build -o ../../bin/poskita

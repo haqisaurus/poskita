@@ -1,0 +1,1 @@
+cd src/poskita && nodemon -e go --exec go run . /Users/haqisaurus/Documents/DOCUMENTS/projects/pribadi/pos/.env
