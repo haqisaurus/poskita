@@ -57,7 +57,7 @@ func PostLoginCompany(c *fiber.Ctx) error {
 	}
 	claimsToken := util.GetUser(c)
 	user := entity.AuthUser{}
-	result := db.Joins("inner JOIN auth_user_company_role aucr on aucr.company_id = auth_user.id ").Where("aucr.user_id", claimsToken["id"]).Where("company_id = ?", req.CompanyID).First(&user)
+	result := db.Joins("inner JOIN auth_user_company_role aucr on aucr.user_id = auth_user.id ").Where("aucr.user_id", claimsToken["id"]).Where("company_id = ?", req.CompanyID).First(&user)
 	if result.Error != nil {
 		return c.Status(fiber.StatusUnauthorized).JSON(util.GenerateError(util.ErrUnauthorized, result.Error.Error()))
 	}

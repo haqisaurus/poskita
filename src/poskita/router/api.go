@@ -20,4 +20,9 @@ func SetupRouter(app *fiber.App) {
 	app.Get("/api/v1/company-list", CompanyAuthMiddleware, controller.ListCompany)
 	app.Get("/api/v1/company-detail/:id", CompanyAuthMiddleware, controller.DetailCompany)
 	 
+	app.Post("/api/v1/product-category-add", CompanyAuthMiddleware, controller.AddCategory)
+	app.Post("/api/v1/product-category-edit", CompanyAuthMiddleware, controller.EditCategory)
+	app.Get("/api/v1/product-category-list", CompanyAuthMiddleware, controller.ListCategory)
+	app.Get("/api/v1/product-category-detail/:id", CompanyAuthMiddleware, controller.DetailCategory)
+	 
 }
