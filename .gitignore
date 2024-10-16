@@ -2,3 +2,4 @@ bin/poskita
 src/poskita/vendor
 __debug_bin*
 .env
+node_modules

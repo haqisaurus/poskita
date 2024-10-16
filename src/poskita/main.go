@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/haqisaurus/poskita/router"
 	"github.com/joho/godotenv"
+	"github.com/gofiber/template/html/v2"
 )
 
 func main() {
@@ -22,8 +23,12 @@ func main() {
 	if errEnv != nil {
 		log.Fatal("Error loading .env file")
 	}
-
-	app := fiber.New()
+	engine := html.New("./views", ".html")
+	app := fiber.New(fiber.Config{
+		Views: engine,
+		
+	})
+	app.Static("/assets", "./bin")
 	router.LoggingRoute((app))
 	router.SetupRouter(app)
 
