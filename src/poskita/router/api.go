@@ -8,7 +8,7 @@ import (
 func SetupRouter(app *fiber.App) {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.Render("index", fiber.Map{
-		}, "layouts/main")
+		})
 	})
 	app.Post("/api/v1/login", controller.PostLogin)
 

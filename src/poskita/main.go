@@ -23,14 +23,14 @@ func main() {
 	if errEnv != nil {
 		log.Fatal("Error loading .env file")
 	}
-	engine := html.New("./views", ".html")
+	engine := html.New("./", ".html")
 	app := fiber.New(fiber.Config{
 		Views: engine,
 		
 	})
-	app.Static("/assets", "./bin")
+	app.Static("/", "./")
 	router.LoggingRoute((app))
 	router.SetupRouter(app)
 
-	app.Listen(":3000")
+	app.Listen(":3001")
 }

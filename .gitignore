@@ -1,4 +1,4 @@
-bin/poskita
+bin/*
 src/poskita/vendor
 __debug_bin*
 .env
